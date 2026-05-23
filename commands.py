@@ -1,10 +1,12 @@
 kumpulan_data = ["pahami konsep backend"]
+
 def tambah(argument):
     kumpulan_data.append(argument)
 
 def tampilkan_list():
-    for item in kumpulan_data:
-        cetaka = print(item)
+    for nomor, nilai in enumerate(kumpulan_data, start=1):
+        nomor = int(nomor)
+        print(f"{nomor}. {nilai}", "\n")
 
 def selesai(number):
     del kumpulan_data[number]

@@ -16,17 +16,19 @@ while ulang:
         print(argument)
         print("added to list")
     elif command == "list":
+        print("\n")
         print("list")
         menampilkan = commands.tampilkan_list()
     elif command == "done":
-        number = int(terminal.split()[1])
+        number = terminal.split()[1]
+        number = int(number) - 1
+        print(commands.kumpulan_data[number], "Done")
         menyelesaikan = commands.selesai(number)
-        print("Done")
     elif command == "edit":
         none, number, argument = terminal.split(maxsplit=2)
-        number = int(number)
+        number = int(number) - 1
+        print(f"edited list : {commands.kumpulan_data[number]} to list : {argument}")
         mengubah = commands.sunting(number,argument)
-        print("edited list : lama to list : baru")
     elif command == "exit":
         ulang = False
         print("program closed")
