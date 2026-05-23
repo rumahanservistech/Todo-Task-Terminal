@@ -22,12 +22,12 @@ while ulang:
     elif command == "done":
         number = terminal.split()[1]
         number = int(number) - 1
-        print(commands.kumpulan_data[number], "Done")
+        print(commands.data_dari_file[number], "Done")
         menyelesaikan = commands.selesai(number)
     elif command == "edit":
         none, number, argument = terminal.split(maxsplit=2)
         number = int(number) - 1
-        print(f"edited list : {commands.kumpulan_data[number]} to list : {argument}")
+        print(f"edited list : {commands.data_dari_file[number]} to list : {argument}")
         mengubah = commands.sunting(number,argument)
     elif command == "exit":
         ulang = False
