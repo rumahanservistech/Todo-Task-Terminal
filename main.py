@@ -1,55 +1,59 @@
 import commands
-# routing
 
-
-# loop
-
+# LOOP 
 ulang = True
 while ulang:
     # input
     terminal = input("todo : ")
+    # pecah kata pertama pada input
     command = terminal.split()[0]
 
+    # COMMAND ADD / TAMBAHKAN 
     if command == "add":
         none, argument = terminal.split(maxsplit=1)
-        menambahkan = commands.tambah(argument)
-        print(argument)
-        print("added to list")
 
+        # EKSEKUSI ADD / TAMBAHKAN
+        menambahkan = commands.tambah(argument)
+        print(f"{argument} =====> Added to list")
+
+    # COMMAND LIST / TAMPILKAN
     elif command == "list":
         print("\n")
-        print("list")
+        print("List :")
+        # EKSEKUSI LIST / TAMPILKAN
         menampilkan = commands.tampilkan_list()
 
+    # COMMAND DONE / SELESAI 
     elif command == "done":
         number = terminal.split()[1]
-        if number.isdigit() and int(number) > 0:
-            try:
-                number = int(number) - 1
-                print(commands.data_dari_file[number], "Done")
-            except Exception as e:
-                print(f"Can't find list No. {number + 1}")
-            else:
-                menyelesaikan = commands.selesai(number)
-        else:
-            print(f"Can't find list '{number}'")
+        
+        # validasi untuk menguji apakah input sesuai dengan kondisi list
+        menguji = commands.validasi_data_int(number)
+        # validasi mengembalikan nilai berupa True / False
+        if menguji == False:
+            # pengkondisian jika validasi bernilai false maka kode di bawah akan di eksekusi, sebaliknya kode di bawah tidak akan di eksekusi
+            number = int(number) - 1
+            menyelesaikan = commands.selesai(number)
+            print(f"List : {commands.data_dari_file[number]} =====> Done")
 
+    # COMMAND EDIT / SUNTING 
     elif command == "edit":
         none, number, argument = terminal.split(maxsplit=2)
-        if number.isdigit() and int(number) > 0:
-            try:
-                number = int(number) - 1
-                print(f"edited list : {commands.data_dari_file[number]} to list : {argument}")
-            except Exception as e:
-                print(f"Can't find list No. {number + 1}")
-            else:
-                mengubah = commands.sunting(number,argument)
-        else:
-            print(f"Can't find list '{number}'")
 
+        # validasi untuk menguji apakah input sesuai dengan kondisi list
+        menguji = commands.validasi_data_int(number)
+        if menguji == False:
+            # validasi mengembalikan nilai berupa True / False
+            number = int(number) - 1
+            mengubah = commands.sunting(number,argument)
+            print(f"{commands.data_dari_file[number]} =====> {argument}")
+
+    # COMMAND EXIT / KELUAR
     elif command == "exit":
+        # menghentikan perulangan dengan mendefinisikan ualng sebagai False
         ulang = False
-        print("program closed")
+        # cetak status
+        print("Program Closed")
 
     else:
-        print("please use a right command for help please read README.md")
+        print("Please use a Right Command For Help Please Read README.md")
