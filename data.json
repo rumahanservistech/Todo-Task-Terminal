@@ -1,13 +1,62 @@
 [
-    "bbuowde",
-    "dbweu",
-    "byidew",
-    "gudew",
-    "hdpiew",
-    "vydw",
-    "uodw",
-    "bdouew",
-    "hdoiw",
-    "hdouew",
-    "dhuew"
+    {
+        "id": 1,
+        "tugas": "diewas",
+        "selesaikan": true
+    },
+    {
+        "id": 2,
+        "tugas": "dioesa",
+        "selesaikan": true
+    },
+    {
+        "id": 3,
+        "tugas": "idoeas",
+        "selesaikan": true
+    },
+    {
+        "id": 5,
+        "tugas": "diews",
+        "selesaikan": true
+    },
+    {
+        "id": 6,
+        "tugas": "dioew",
+        "selesaikan": true
+    },
+    {
+        "id": 7,
+        "tugas": "~/Dokumen/felix-code/",
+        "selesaikan": true
+    },
+    {
+        "id": 8,
+        "tugas": "hnosia",
+        "selesaikan": true
+    },
+    {
+        "id": 9,
+        "tugas": "doewsa",
+        "selesaikan": false
+    },
+    {
+        "id": 10,
+        "tugas": "hdieosa",
+        "selesaikan": true
+    },
+    {
+        "id": 11,
+        "tugas": "dipew",
+        "selesaikan": false
+    },
+    {
+        "id": 12,
+        "tugas": "ideoa",
+        "selesaikan": true
+    },
+    {
+        "id": 13,
+        "tugas": "diewas",
+        "selesaikan": true
+    }
 ]

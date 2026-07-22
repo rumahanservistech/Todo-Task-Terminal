@@ -2,7 +2,7 @@ import commands
 
 # TAMPILKAN LIST
 # tampilkan setiap memulai program
-menampilkan = commands.tampilkan_list()
+# menampilkan = commands.tampilkan_list()
 
 # LOOP 
 ulang = True
@@ -23,7 +23,6 @@ while ulang:
 
             # PECAH INPUT TERMINAL MENJADI 2 BAGIAN
             bagian = terminal.split(maxsplit=1)
-            # print(bagian)
             # JIKA BAGIAN PECAHAN KURANG DARI 2, MAKA CETAK FEEDBACK
             if len(bagian) < 2:
                 print("Gunakan perintah dengan format yang benar =====> [add], [Nama Tugas]")
@@ -64,6 +63,15 @@ while ulang:
                 mengeksekusi = commands.eksekusi(number,status,tugas,argument)
 
 
+        # elif command == "del":
+
+            # bagian = terminal.split(maxsplit=1)
+            # if len(bagian) < 2:
+            #     print("Gunakan perintah dengan format yang benar =====> [del], [ID Tugas, ex:6]")
+            # else:
+            #     _,number = bagian
+            #     status = 
+
         # COMMAND EDIT / SUNTING 
         elif command == "edit":
 
@@ -84,7 +92,7 @@ while ulang:
                 
 
         # COMMAND EXIT / KELUAR
-        elif command == "exit":
+        elif command == "e":
             # menghentikan perulangan dengan mendefinisikan ualng sebagai False
             ulang = False
             # cetak status
