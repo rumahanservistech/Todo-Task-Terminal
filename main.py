@@ -54,8 +54,8 @@ while ulang:
                 # SEBALIKNYA, DEFINISIKAN BAGIAN KEDUA SEBAGAI NUMBER
                 # DEFINISIKAN STATUS, TUGAS SEBAGAI TRUE, UNTUK PENGKONDISIAN PADA FUNGSI EKSEKUSI
                 _,number = bagian
-                status = True
-                tugas = True
+                status = "perintah_done"
+                tugas = "perintah_done"
                 # ARGUMENT DIKOSONGKAN
                 argument = ""
 
@@ -63,14 +63,21 @@ while ulang:
                 mengeksekusi = commands.eksekusi(number,status,tugas,argument)
 
 
-        # elif command == "del":
+        elif command == "del":
 
-            # bagian = terminal.split(maxsplit=1)
-            # if len(bagian) < 2:
-            #     print("Gunakan perintah dengan format yang benar =====> [del], [ID Tugas, ex:6]")
-            # else:
-            #     _,number = bagian
-            #     status = 
+            bagian = terminal.split(maxsplit=1)
+            if len(bagian) < 2:
+                print("Gunakan perintah dengan format yang benar =====> [del], [ID Tugas, ex:5]")
+            else:
+                _,number = bagian
+                status = "perintah_del" 
+                tugas = "perintah_del"
+
+                # ARGUMENT DIKOSONGKAN
+                argument = ""
+
+                # EKSEKUSI DEL / HAPUS
+                mengeksekusi = commands.eksekusi(number,status,tugas,argument)
 
         # COMMAND EDIT / SUNTING 
         elif command == "edit":
@@ -84,8 +91,8 @@ while ulang:
                 # SEBALIKNYA, DEFINISIKAN BAGIAN KEDUA SEBAGAI NUMBER DAN BAGIAN KETIGA SEBAGAI ARGUMENT
                 # DEFINISIKAN STATUS, TUGAS SEBAGAI FALSE, UNTUK PENGKONDISIAN PADA FUNGSI EKSEKUSI
                 _,number,argument = bagian
-                status = False
-                tugas = False
+                status = "perintah_edit"
+                tugas = "perintah_edit"
 
                 # EKSEKUSI EDIT / SUNTING
                 mengeksekusi = commands.eksekusi(number,status,tugas,argument)

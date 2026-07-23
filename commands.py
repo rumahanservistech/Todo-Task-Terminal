@@ -110,9 +110,35 @@ def selesai(number):
         json.dump(data_dari_file, file_tulis, indent=4)
 
 
+def hapus(number):
+
+    for nomor, i in enumerate(data_dari_file):
+        # print(nomor, i)
+        if i["id"] == int(number):
+            print(i, nomor)
+            nomor_data_dari_file = nomor
+    print(nomor_data_dari_file)
+    del data_dari_file[nomor_data_dari_file]
+
+    # SIMPAN HASIL DATA_DARI_FILE BARU KE JSON
+    with open("data.json","w") as file_tulis:
+        json.dump(data_dari_file, file_tulis, indent=4)
+
+    # for i in data_dari_file:
+    #     if i["id"] == int(number):
+    #         print(f"{i} dihapus")
+
+
 # FUNGSI EDIT / SUNTING
 def sunting(number,argument):
-    data_dari_file[number] = argument
+
+    for i in data_dari_file:
+        if i["id"] == int(number):
+            # print(i)
+            print(f"[ {i["id"]} ] {i["tugas"]} =====> [ {i["id"]} ] {argument}")
+            i["tugas"] = argument
+
+    # SIMPAN HASIL DATA_DARI_FILE BARU KE JSON
     with open("data.json","w") as file_tulis:
         json.dump(data_dari_file, file_tulis, indent=4)
         
@@ -175,9 +201,13 @@ def eksekusi(number,status,tugas,argument):
         # print(f"{commands.data_dari_file[number]} =====> Done")
         # menyelesaikan = commands.selesai(number)
         print(status)
-        if tugas == True:
-            # print(f"{data_dari_file[number]} =====> Done")
+        # print("tugas : ", tugas)
+        if tugas == "perintah_done":
+            # print(f"{data_dari_file[int(number)]} =====> Done")
             perintah = selesai(number)
-        else:
-            print(f"{data_dari_file[number]} =====> {argument}")
+        elif tugas == "perintah_del":
+            # print(f"{data_dari_file[int(number)]} =====> Delete")
+            perintah = hapus(number)
+        elif tugas == "perintah_edit":
+            # print(f"{data_dari_file[int(number)]} =====> {argument}")
             perintah = sunting(number,argument)
