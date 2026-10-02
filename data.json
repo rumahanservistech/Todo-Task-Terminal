@@ -1,27 +1,7 @@
 [
     {
-        "id": 1,
-        "tugas": "bdoewsa",
-        "selesaikan": false
-    },
-    {
         "id": 2,
-        "tugas": "diewsa",
+        "tugas": "sirami tanaman tomat",
         "selesaikan": false
-    },
-    {
-        "id": 4,
-        "tugas": "bfiurewd",
-        "selesaikan": false
-    },
-    {
-        "id": 5,
-        "tugas": "dewuo",
-        "selesaikan": false
-    },
-    {
-        "id": 7,
-        "tugas": "hdoew",
-        "selesaikan": true
     }
 ]
